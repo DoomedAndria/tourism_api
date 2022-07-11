@@ -48,9 +48,9 @@ app.use(bodyparser.urlencoded({extended:true}))
 // })
 
 app.get('/',(req,res)=>{
-    res.send('hello')
+    res.send('pathsze var')
 })
 
 app.listen(3001,()=>{
-    console.log("hello")
+    console.log("3000 portze var")
 })
