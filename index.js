@@ -26,7 +26,7 @@ app.post('/api/users/insert',(req,res)=>{
     const password = req.body.password
 
     const sqlInsert = "INSERT INTO user (name,surname,phone_number,email,password) VALUES (?,?,?,?,?)"
-    db.query(sqlInsert,[name,surname,phone_number,email,password],(err,result)=>{
+    const r = await db.query(sqlInsert,[name,surname,phone_number,email,password],(err,result)=>{
         console.log(result)
         if (err) throw err;
         console.log('record inserted');
