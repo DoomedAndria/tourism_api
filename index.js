@@ -18,7 +18,7 @@ app.use(bodyparser.urlencoded({extended:true}))
 
 
 // insert user into database
-app.post('/api/users/insert',async (req, res) => {
+app.post('/api/users/insert',(req, res) => {
     const name = req.body.name
     const surname = req.body.surname
     const phone_number = req.body.phone_number
@@ -26,7 +26,7 @@ app.post('/api/users/insert',async (req, res) => {
     const password = req.body.password
 
     const sqlInsert = "INSERT INTO user (name,surname,phone_number,email,password) VALUES (?,?,?,?,?)"
-    const r = await db.query(sqlInsert, [name, surname, phone_number, email, password], (err, result) => {
+    db.query(sqlInsert, [name, surname, phone_number, email, password], (err, result) => {
         console.log(result)
         if (err) throw err;
         console.log('record inserted');
