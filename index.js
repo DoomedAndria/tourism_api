@@ -3,13 +3,13 @@ const bodyparser = require('body-parser')
 const mysql = require('mysql')
 const cors = require('cors')
 const app = express()
-
+let port = process.env.PORT || 3001
 
 const db = mysql.createPool({
-    host: 'sql202.epizy.com',
-    user: 'epiz_32148174',
-    password: '6Mct0QWC2u',
-    database: 'epiz_32148174_final_project'
+    host: 'bztj5kl5dnokpv4ytsez-mysql.services.clever-cloud.com',
+    user: 'ujspohnvfp9gynln',
+    password: 'PKdmTy2cN5wxWrJeT970',
+    database: 'bztj5kl5dnokpv4ytsez'
 })
 
 app.use(cors())
@@ -48,9 +48,9 @@ app.get('/api/gallery',(req,res)=>{
 })
 
 app.get('/',(req,res)=>{
-    res.send('hello')
+    res.send('uraaaa')
 })
 
-app.listen(3001,()=>{
-    console.log("hello")
+app.listen(port,()=>{
+    console.log("portze var")
 })
