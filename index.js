@@ -17,19 +17,19 @@ app.use(express.json())
 app.use(bodyparser.urlencoded({extended:true}))
 
 
-//insert user into database
-// app.post('/api/users/insert',(req,res)=>{
-//     const name = req.body.name
-//     const surname = req.body.surname
-//     const phone_number = req.body.phone_number
-//     const email = req.body.email
-//     const password = req.body.password
+insert user into database
+app.post('/api/users/insert',(req,res)=>{
+    const name = req.body.name
+    const surname = req.body.surname
+    const phone_number = req.body.phone_number
+    const email = req.body.email
+    const password = req.body.password
 
-//     const sqlInsert = "INSERT INTO user (name,surname,phone_number,email,password) VALUES (?,?,?,?,?)"
-//     db.query(sqlInsert,[name,surname,phone_number,email,password],(err,result)=>{
-//         console.log(result)
-//     })
-// })
+    const sqlInsert = "INSERT INTO user (name,surname,phone_number,email,password) VALUES (?,?,?,?,?)"
+    db.query(sqlInsert,[name,surname,phone_number,email,password],(err,result)=>{
+        console.log(result)
+    })
+})
 
 //fetching card information
 app.get('/api/cards',(req,res)=>{
