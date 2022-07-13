@@ -28,6 +28,10 @@ app.post('/api/users/insert',(req,res)=>{
     const sqlInsert = "INSERT INTO user (name,surname,phone_number,email,password) VALUES (?,?,?,?,?)"
     db.query(sqlInsert,[name,surname,phone_number,email,password],(err,result)=>{
         console.log(result)
+        if (err) throw err;
+        console.log('record inserted');
+        req.flash('success', 'Data added successfully!');
+        res.redirect('/');
     })
 })
 
