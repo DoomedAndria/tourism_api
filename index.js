@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(bodyparser.urlencoded({extended:true}))
 
 
-insert user into database
+// insert user into database
 app.post('/api/users/insert',(req,res)=>{
     const name = req.body.name
     const surname = req.body.surname
