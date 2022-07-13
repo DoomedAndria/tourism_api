@@ -30,7 +30,6 @@ app.post('/api/users/insert',(req, res) => {
         console.log(result)
         if (err) throw err;
         console.log('record inserted');
-        req.flash('success', 'Data added successfully!');
         res.redirect('/');
     })
 })
